@@ -43,9 +43,11 @@ const EditRedemption = (props) => {
     quota: 100000,
     count: 1,
     expired_time: 0,
+    user_exchange_count: 1,
+    exchange_count: 1,
   };
   const [inputs, setInputs] = useState(originInputs);
-  const { name, quota, count, expired_time } = inputs;
+  const { name, quota, count, expired_time, user_exchange_count, exchange_count } = inputs;
 
   const handleCancel = () => {
     props.handleClose();
@@ -289,6 +291,32 @@ const EditRedemption = (props) => {
                       { value: 250000000, label: '500$' },
                       { value: 500000000, label: '1000$' },
                     ]}
+                  />
+                </div>
+                <div>
+                  <Text strong className="block mb-2">{t('每个用户可兑换次数')}</Text>
+                  <Input
+                    placeholder={t('请输入每个用户可兑换次数')}
+                    onChange={(value) => handleInputChange('user_exchange_count', value)}
+                    value={user_exchange_count}
+                    autoComplete="new-password"
+                    type="number"
+                    size="large"
+                    className="!rounded-lg"
+                    prefix={<IconPlusCircle />}
+                  />
+                </div>
+                <div>
+                  <Text strong className="block mb-2">{t('兑换码可使用次数')}</Text>
+                  <Input
+                    placeholder={t('请输入兑换码可使用次数')}
+                    onChange={(value) => handleInputChange('exchange_count', value)}
+                    value={exchange_count}
+                    autoComplete="new-password"
+                    type="number"
+                    size="large"
+                    className="!rounded-lg"
+                    prefix={<IconPlusCircle />}
                   />
                 </div>
 

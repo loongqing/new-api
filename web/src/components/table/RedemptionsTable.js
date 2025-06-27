@@ -128,6 +128,20 @@ const RedemptionsTable = () => {
       },
     },
     {
+      title: t('每个用户可兑换次数'),
+      dataIndex: 'user_exchange_count',
+      render: (text, record, index) => {
+        return <div>{text}</div>;
+      },
+    },
+    {
+      title: t('兑换码可使用次数'),
+      dataIndex: 'exchange_count',
+      render: (text, record, index) => {
+        return <div>{text}</div>;
+      },
+    },
+    {
       title: t('创建时间'),
       dataIndex: 'created_time',
       render: (text, record, index) => {

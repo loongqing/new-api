@@ -141,6 +141,8 @@ func AddRedemption(c *gin.Context) {
 			CreatedTime: common.GetTimestamp(),
 			Quota:       redemption.Quota,
 			ExpiredTime: redemption.ExpiredTime,
+			UserExchangeCount: redemption.UserExchangeCount,
+			ExchangeCount:     redemption.ExchangeCount,
 		}
 		err = cleanRedemption.Insert()
 		if err != nil {
@@ -206,6 +208,8 @@ func UpdateRedemption(c *gin.Context) {
 		cleanRedemption.Name = redemption.Name
 		cleanRedemption.Quota = redemption.Quota
 		cleanRedemption.ExpiredTime = redemption.ExpiredTime
+		cleanRedemption.UserExchangeCount = redemption.UserExchangeCount
+		cleanRedemption.ExchangeCount = redemption.ExchangeCount
 	}
 	if statusOnly != "" {
 		cleanRedemption.Status = redemption.Status
