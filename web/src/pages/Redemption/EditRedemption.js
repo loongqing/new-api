@@ -89,6 +89,8 @@ const EditRedemption = (props) => {
     let localInputs = inputs;
     localInputs.count = parseInt(localInputs.count);
     localInputs.quota = parseInt(localInputs.quota);
+    localInputs.user_exchange_count = parseInt(localInputs.user_exchange_count);
+    localInputs.exchange_count = parseInt(localInputs.exchange_count);
     localInputs.name = name;
     if (localInputs.expired_time === null || localInputs.expired_time === undefined) {
       localInputs.expired_time = 0;
